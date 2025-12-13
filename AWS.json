@@ -1,0 +1,186 @@
+﻿{
+  "metadata": {
+    "description": "Large S3 ACL test dataset used by the scanner. Programs should ignore this metadata object when parsing buckets.",
+    "coverage": [
+      "Private buckets with only canonical-user grants",
+      "Public buckets exposed to AllUsers (READ, WRITE, or both)",
+      "AuthenticatedUsers grants (broader than canonical users but narrower than AllUsers)",
+      "Mixed grants combining canonical users and public groups",
+      "Buckets with empty or missing ACLs to test edge handling",
+      "Various regions and grant types (CanonicalUser, AmazonCustomerByEmail, Group)"
+    ],
+    "notes": "This metadata is for human readers and test documentation; scanner logic should only process the 'buckets' array."
+  },
+  "buckets": [
+    {
+      "_comment": "Private bucket: only canonical user grants (no public access).",
+      "Name": "private-bucket-1",
+      "Region": "us-east-1",
+      "ACL": {
+        "Owner": { "ID": "owner-1" },
+        "Grants": [
+          {
+            "Grantee": { "Type": "CanonicalUser", "ID": "owner-1" },
+            "Permission": "FULL_CONTROL"
+          }
+        ]
+      }
+    },
+    {
+      "_comment": "Public bucket: AllUsers granted READ (public-read).",
+      "Name": "public-read-bucket",
+      "Region": "us-west-2",
+      "ACL": {
+        "Owner": { "ID": "owner-2" },
+        "Grants": [
+          {
+            "Grantee": { "Type": "Group", "URI": "http://acs.amazonaws.com/groups/global/AllUsers" },
+            "Permission": "READ"
+          }
+        ]
+      }
+    },
+    {
+      "_comment": "Public bucket: AllUsers granted both WRITE and READ (public-read-write).",
+      "Name": "public-read-write-bucket",
+      "Region": "eu-west-1",
+      "ACL": {
+        "Owner": { "ID": "owner-3" },
+        "Grants": [
+          {
+            "Grantee": { "Type": "Group", "URI": "http://acs.amazonaws.com/groups/global/AllUsers" },
+            "Permission": "WRITE"
+          },
+          {
+            "Grantee": { "Type": "Group", "URI": "http://acs.amazonaws.com/groups/global/AllUsers" },
+            "Permission": "READ"
+          }
+        ]
+      }
+    },
+    {
+      "_comment": "AuthenticatedUsers grant: broader than canonical users but narrower than AllUsers.",
+      "Name": "authenticated-users-bucket",
+      "Region": "ap-southeast-1",
+      "ACL": {
+        "Owner": { "ID": "owner-4" },
+        "Grants": [
+          {
+            "Grantee": { "Type": "Group", "URI": "http://acs.amazonaws.com/groups/global/AuthenticatedUsers" },
+            "Permission": "READ"
+          }
+        ]
+      }
+    },
+    {
+      "_comment": "Mixed grants: canonical users plus an AllUsers grant to test mixed detection.",
+      "Name": "mixed-grants-bucket",
+      "Region": "us-east-2",
+      "ACL": {
+        "Owner": { "ID": "owner-5" },
+        "Grants": [
+          {
+            "Grantee": { "Type": "CanonicalUser", "ID": "user-123" },
+            "Permission": "READ"
+          },
+          {
+            "Grantee": { "Type": "CanonicalUser", "ID": "user-456" },
+            "Permission": "WRITE"
+          },
+          {
+            "Grantee": { "Type": "Group", "URI": "http://acs.amazonaws.com/groups/global/AllUsers" },
+            "Permission": "READ"
+          }
+        ]
+      }
+    },
+    {
+      "_comment": "Bucket with missing ACL object to test edge handling (scanner should handle empty/missing Grants).",
+      "Name": "no-acl-bucket",
+      "Region": "ca-central-1",
+      "ACL": {}
+    },
+    {
+      "_comment": "Complex grant types: AmazonCustomerByEmail and CanonicalUser with display name.",
+      "Name": "complex-details-bucket",
+      "Region": "eu-central-1",
+      "ACL": {
+        "Owner": { "ID": "owner-7" },
+        "Grants": [
+          {
+            "Grantee": {
+              "Type": "AmazonCustomerByEmail",
+              "EmailAddress": "example@example.com"
+            },
+            "Permission": "READ_ACP"
+          },
+          {
+            "Grantee": {
+              "Type": "CanonicalUser",
+              "ID": "user-789",
+              "DisplayName": "team-member"
+            },
+            "Permission": "FULL_CONTROL"
+          }
+        ]
+      }
+    },
+    {
+      "_comment": "Large grants set: includes AllUsers and AuthenticatedUsers plus canonical users.",
+      "Name": "large-grants-bucket",
+      "Region": "sa-east-1",
+      "ACL": {
+        "Owner": { "ID": "owner-8" },
+        "Grants": [
+          {
+            "Grantee": { "Type": "Group", "URI": "http://acs.amazonaws.com/groups/global/AllUsers" },
+            "Permission": "READ"
+          },
+          {
+            "Grantee": { "Type": "Group", "URI": "http://acs.amazonaws.com/groups/global/AuthenticatedUsers" },
+            "Permission": "READ"
+          },
+          {
+            "Grantee": { "Type": "CanonicalUser", "ID": "user-001" },
+            "Permission": "WRITE"
+          },
+          {
+            "Grantee": { "Type": "CanonicalUser", "ID": "user-002" },
+            "Permission": "READ"
+          }
+        ]
+      }
+    },
+    {
+      "_comment": "Bucket with an explicit empty Grants array (no grants).",
+      "Name": "empty-grants-bucket",
+      "Region": "us-east-1",
+      "ACL": {
+        "Owner": { "ID": "owner-9" },
+        "Grants": []
+      }
+    },
+    {
+      "_comment": "Public bucket with multiple public permissions and AuthenticatedUsers entry.",
+      "Name": "public-multiple-perms-bucket",
+      "Region": "eu-north-1",
+      "ACL": {
+        "Owner": { "ID": "owner-10" },
+        "Grants": [
+          {
+            "Grantee": { "Type": "Group", "URI": "http://acs.amazonaws.com/groups/global/AllUsers" },
+            "Permission": "READ"
+          },
+          {
+            "Grantee": { "Type": "Group", "URI": "http://acs.amazonaws.com/groups/global/AllUsers" },
+            "Permission": "WRITE"
+          },
+          {
+            "Grantee": { "Type": "Group", "URI": "http://acs.amazonaws.com/groups/global/AuthenticatedUsers" },
+            "Permission": "READ"
+          }
+        ]
+      }
+    }
+  ]
+}

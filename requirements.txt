@@ -1,0 +1,8 @@
+# requirements.txt (list of Python packages to install)
+boto3
+botocore
+moto
+pytest
+tabulate
+beautifulsoup4
+rich

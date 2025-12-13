@@ -1,0 +1,21 @@
+{
+  "scan_time": "2025-12-09T21:16:21Z",
+  "mode": "dummy",
+  "summary": {
+    "findings_count": 1
+  },
+  "findings": [
+    {
+      "resource": "s3://public-bucket",
+      "issue": "Public ACL",
+      "severity": 9,
+      "details": "Grant: {'Grantee': {'Type': 'Group', 'URI': 'http://acs.amazonaws.com/groups/global/AllUsers'}, 'Permission': 'READ'}",
+      "metadata": {
+        "rule_id": "S3-ACL-001"
+      }
+    }
+  ],
+  "extra": {
+    "source_file": "dummy_data/sample_aws_resources.json"
+  }
+}

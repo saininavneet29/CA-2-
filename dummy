@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset='utf-8'><title>Scan Report</title>
+<style>table{border-collapse:collapse;width:100%}th,td{border:1px solid #ddd;padding:8px}th{background:#f2f2f2;text-align:left}</style>
+</head><body>
+<h2>Scan Report - 2025-12-09T21:23:54Z - mode: dummy</h2>
+<p>Total findings: 10</p>
+<div><strong>Metadata:</strong><ul>
+<li>source_file: dummy_data/sample_aws_resources.json</li>
+</ul></div>
+<table><thead><tr><th>Resource</th><th>Issue</th><th>Severity</th><th>Details</th></tr></thead><tbody>
+<tr><td>s3://public-read-bucket</td><td>Public ACL</td><td>9</td><td>Grant: {&#39;Grantee&#39;: {&#39;Type&#39;: &#39;Group&#39;, &#39;URI&#39;: &#39;http://acs.amazonaws.com/groups/global/AllUsers&#39;}, &#39;Permission&#39;: &#39;READ&#39;}</td></tr>
+<tr><td>s3://public-read-write-bucket</td><td>Public ACL</td><td>9</td><td>Grant: {&#39;Grantee&#39;: {&#39;Type&#39;: &#39;Group&#39;, &#39;URI&#39;: &#39;http://acs.amazonaws.com/groups/global/AllUsers&#39;}, &#39;Permission&#39;: &#39;WRITE&#39;}</td></tr>
+<tr><td>s3://public-read-write-bucket</td><td>Public ACL</td><td>9</td><td>Grant: {&#39;Grantee&#39;: {&#39;Type&#39;: &#39;Group&#39;, &#39;URI&#39;: &#39;http://acs.amazonaws.com/groups/global/AllUsers&#39;}, &#39;Permission&#39;: &#39;READ&#39;}</td></tr>
+<tr><td>s3://authenticated-users-bucket</td><td>Public ACL</td><td>9</td><td>Grant: {&#39;Grantee&#39;: {&#39;Type&#39;: &#39;Group&#39;, &#39;URI&#39;: &#39;http://acs.amazonaws.com/groups/global/AuthenticatedUsers&#39;}, &#39;Permission&#39;: &#39;READ&#39;}</td></tr>
+<tr><td>s3://mixed-grants-bucket</td><td>Public ACL</td><td>9</td><td>Grant: {&#39;Grantee&#39;: {&#39;Type&#39;: &#39;Group&#39;, &#39;URI&#39;: &#39;http://acs.amazonaws.com/groups/global/AllUsers&#39;}, &#39;Permission&#39;: &#39;READ&#39;}</td></tr>
+<tr><td>s3://large-grants-bucket</td><td>Public ACL</td><td>9</td><td>Grant: {&#39;Grantee&#39;: {&#39;Type&#39;: &#39;Group&#39;, &#39;URI&#39;: &#39;http://acs.amazonaws.com/groups/global/AllUsers&#39;}, &#39;Permission&#39;: &#39;READ&#39;}</td></tr>
+<tr><td>s3://large-grants-bucket</td><td>Public ACL</td><td>9</td><td>Grant: {&#39;Grantee&#39;: {&#39;Type&#39;: &#39;Group&#39;, &#39;URI&#39;: &#39;http://acs.amazonaws.com/groups/global/AuthenticatedUsers&#39;}, &#39;Permission&#39;: &#39;READ&#39;}</td></tr>
+<tr><td>s3://public-multiple-perms-bucket</td><td>Public ACL</td><td>9</td><td>Grant: {&#39;Grantee&#39;: {&#39;Type&#39;: &#39;Group&#39;, &#39;URI&#39;: &#39;http://acs.amazonaws.com/groups/global/AllUsers&#39;}, &#39;Permission&#39;: &#39;READ&#39;}</td></tr>
+<tr><td>s3://public-multiple-perms-bucket</td><td>Public ACL</td><td>9</td><td>Grant: {&#39;Grantee&#39;: {&#39;Type&#39;: &#39;Group&#39;, &#39;URI&#39;: &#39;http://acs.amazonaws.com/groups/global/AllUsers&#39;}, &#39;Permission&#39;: &#39;WRITE&#39;}</td></tr>
+<tr><td>s3://public-multiple-perms-bucket</td><td>Public ACL</td><td>9</td><td>Grant: {&#39;Grantee&#39;: {&#39;Type&#39;: &#39;Group&#39;, &#39;URI&#39;: &#39;http://acs.amazonaws.com/groups/global/AuthenticatedUsers&#39;}, &#39;Permission&#39;: &#39;READ&#39;}</td></tr>
+</tbody></table></body></html>

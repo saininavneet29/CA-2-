@@ -1,0 +1,20 @@
+{
+  "scan_time": "2025-12-10T01:03:12Z",
+  "mode": "aws",
+  "summary": {
+    "findings_count": 1
+  },
+  "findings": [
+    {
+      "resource": "aws:s3:list_buckets",
+      "issue": "ListBucketsError",
+      "severity": 5,
+      "details": "An error occurred (InvalidAccessKeyId) when calling the ListBuckets operation: The AWS Access Key Id you provided does not exist in our records.",
+      "metadata": {}
+    }
+  ],
+  "extra": {
+    "profile": "ubuntu",
+    "region": "eu-west-1"
+  }
+}

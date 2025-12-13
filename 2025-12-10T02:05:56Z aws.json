@@ -1,0 +1,12 @@
+{
+  "scan_time": "2025-12-10T02:05:56Z",
+  "mode": "aws",
+  "summary": {
+    "findings_count": 0
+  },
+  "findings": [],
+  "extra": {
+    "profile": "scanner-user",
+    "region": "us-east-1"
+  }
+}

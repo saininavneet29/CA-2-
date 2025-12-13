@@ -1,0 +1,102 @@
+{
+  "scan_time": "2025-12-09T21:30:21Z",
+  "mode": "dummy",
+  "summary": {
+    "findings_count": 10
+  },
+  "findings": [
+    {
+      "resource": "s3://public-read-bucket",
+      "issue": "Public ACL",
+      "severity": 9,
+      "details": "Grant: {'Grantee': {'Type': 'Group', 'URI': 'http://acs.amazonaws.com/groups/global/AllUsers'}, 'Permission': 'READ'}",
+      "metadata": {
+        "rule_id": "S3-ACL-001"
+      }
+    },
+    {
+      "resource": "s3://public-read-write-bucket",
+      "issue": "Public ACL",
+      "severity": 9,
+      "details": "Grant: {'Grantee': {'Type': 'Group', 'URI': 'http://acs.amazonaws.com/groups/global/AllUsers'}, 'Permission': 'WRITE'}",
+      "metadata": {
+        "rule_id": "S3-ACL-001"
+      }
+    },
+    {
+      "resource": "s3://public-read-write-bucket",
+      "issue": "Public ACL",
+      "severity": 9,
+      "details": "Grant: {'Grantee': {'Type': 'Group', 'URI': 'http://acs.amazonaws.com/groups/global/AllUsers'}, 'Permission': 'READ'}",
+      "metadata": {
+        "rule_id": "S3-ACL-001"
+      }
+    },
+    {
+      "resource": "s3://authenticated-users-bucket",
+      "issue": "Public ACL",
+      "severity": 9,
+      "details": "Grant: {'Grantee': {'Type': 'Group', 'URI': 'http://acs.amazonaws.com/groups/global/AuthenticatedUsers'}, 'Permission': 'READ'}",
+      "metadata": {
+        "rule_id": "S3-ACL-001"
+      }
+    },
+    {
+      "resource": "s3://mixed-grants-bucket",
+      "issue": "Public ACL",
+      "severity": 9,
+      "details": "Grant: {'Grantee': {'Type': 'Group', 'URI': 'http://acs.amazonaws.com/groups/global/AllUsers'}, 'Permission': 'READ'}",
+      "metadata": {
+        "rule_id": "S3-ACL-001"
+      }
+    },
+    {
+      "resource": "s3://large-grants-bucket",
+      "issue": "Public ACL",
+      "severity": 9,
+      "details": "Grant: {'Grantee': {'Type': 'Group', 'URI': 'http://acs.amazonaws.com/groups/global/AllUsers'}, 'Permission': 'READ'}",
+      "metadata": {
+        "rule_id": "S3-ACL-001"
+      }
+    },
+    {
+      "resource": "s3://large-grants-bucket",
+      "issue": "Public ACL",
+      "severity": 9,
+      "details": "Grant: {'Grantee': {'Type': 'Group', 'URI': 'http://acs.amazonaws.com/groups/global/AuthenticatedUsers'}, 'Permission': 'READ'}",
+      "metadata": {
+        "rule_id": "S3-ACL-001"
+      }
+    },
+    {
+      "resource": "s3://public-multiple-perms-bucket",
+      "issue": "Public ACL",
+      "severity": 9,
+      "details": "Grant: {'Grantee': {'Type': 'Group', 'URI': 'http://acs.amazonaws.com/groups/global/AllUsers'}, 'Permission': 'READ'}",
+      "metadata": {
+        "rule_id": "S3-ACL-001"
+      }
+    },
+    {
+      "resource": "s3://public-multiple-perms-bucket",
+      "issue": "Public ACL",
+      "severity": 9,
+      "details": "Grant: {'Grantee': {'Type': 'Group', 'URI': 'http://acs.amazonaws.com/groups/global/AllUsers'}, 'Permission': 'WRITE'}",
+      "metadata": {
+        "rule_id": "S3-ACL-001"
+      }
+    },
+    {
+      "resource": "s3://public-multiple-perms-bucket",
+      "issue": "Public ACL",
+      "severity": 9,
+      "details": "Grant: {'Grantee': {'Type': 'Group', 'URI': 'http://acs.amazonaws.com/groups/global/AuthenticatedUsers'}, 'Permission': 'READ'}",
+      "metadata": {
+        "rule_id": "S3-ACL-001"
+      }
+    }
+  ],
+  "extra": {
+    "source_file": "dummy_data/sample_aws_resources.json"
+  }
+}

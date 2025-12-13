@@ -1,0 +1,13 @@
+<!doctype html>
+<html><head><meta charset='utf-8'><title>Scan Report</title>
+<style>body{font-family:Arial,Helvetica,sans-serif;margin:20px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #ddd;padding:8px}th{background:#f2f2f2;text-align:left}tr:nth-child(even){background:#fafafa}pre{white-space:pre-wrap;word-wrap:break-word}</style>
+</head><body>
+<h2>Scan Report - 2025-12-10T01:22:58Z - mode: aws</h2>
+<p>Total findings: 1</p>
+<div><strong>Metadata:</strong><ul>
+<li>profile: scanner-user</li>
+<li>region: us-east-1</li>
+</ul></div>
+<table><thead><tr><th>Resource</th><th>Issue</th><th>Severity</th><th>Details</th></tr></thead><tbody>
+<tr><td>aws:s3:list_buckets</td><td>ListBucketsError</td><td>5</td><td><pre>An error occurred (AccessDenied) when calling the ListBuckets operation: User: arn:aws:iam::215705705470:user/Kishan is not authorized to perform: s3:ListAllMyBuckets because no identity-based policy allows the s3:ListAllMyBuckets action</pre></td></tr>
+</tbody></table></body></html>

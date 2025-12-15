@@ -1,0 +1,82 @@
+{
+  "scan_time": "2025-12-12T22:25:52Z",
+  "mode": "aws",
+  "findings": [
+    {
+      "resource": "s3://dbs-scanner-test-bucket",
+      "issue": "Public Bucket Policy",
+      "severity": 9,
+      "details": "Policy: {\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"s3:GetObject\",\"Resource\":\"arn:aws:s3:::dbs-scanner-test-bucket/*\"}]}",
+      "metadata": {
+        "rule_id": "S3-POLICY-001"
+      }
+    },
+    {
+      "resource": "s3://dbs-scanner-test-bucket/Empty_DBS_S3_Bucket_file.txt",
+      "issue": "Public Object ACL",
+      "severity": 9,
+      "details": "Object ACL Grants: [{'Grantee': {'ID': '7ea34c24fb2fd4ae97a81b9b032a4855241c9e53da2d628b31851ddef0c2871a', 'Type': 'CanonicalUser'}, 'Permission': 'FULL_CONTROL'}, {'Grantee': {'Type': 'Group', 'URI': 'http://acs.amazonaws.com/groups/global/AllUsers'}, 'Permission': 'READ'}]",
+      "metadata": {
+        "rule_id": "S3-OBJ-ACL-001"
+      }
+    },
+    {
+      "resource": "s3://dbs-scanner-test-bucket/Empty_DBS_S3_Bucket_file2.txt",
+      "issue": "Public Object ACL",
+      "severity": 9,
+      "details": "Object ACL Grants: [{'Grantee': {'ID': '7ea34c24fb2fd4ae97a81b9b032a4855241c9e53da2d628b31851ddef0c2871a', 'Type': 'CanonicalUser'}, 'Permission': 'FULL_CONTROL'}, {'Grantee': {'Type': 'Group', 'URI': 'http://acs.amazonaws.com/groups/global/AllUsers'}, 'Permission': 'READ'}]",
+      "metadata": {
+        "rule_id": "S3-OBJ-ACL-001"
+      }
+    },
+    {
+      "resource": "s3://dbs-scanner-test-bucket",
+      "issue": "Public Access Block Permissive",
+      "severity": 5,
+      "details": "BlockPublicAcls is False",
+      "metadata": {
+        "rule_id": "S3-PAB-002",
+        "setting": "BlockPublicAcls"
+      }
+    },
+    {
+      "resource": "s3://dbs-scanner-test-bucket",
+      "issue": "Access Logging Disabled",
+      "severity": 5,
+      "details": "Bucket access logging is not enabled",
+      "metadata": {
+        "rule_id": "S3-LOG-001"
+      }
+    },
+    {
+      "resource": "s3://dbs-scanner-test-bucket",
+      "issue": "Versioning Not Enabled",
+      "severity": 5,
+      "details": "Versioning status: {'ResponseMetadata': {'RequestId': '0S84V7YSQ4GGBY7K', 'HostId': 'OIZtvBN2Wa8YidILtEJqnlJyQERMDtOWwGJxDsruBphjUwDHsSWi2Ul7juawRRmBeRxIX0rdMYk=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': 'OIZtvBN2Wa8YidILtEJqnlJyQERMDtOWwGJxDsruBphjUwDHsSWi2Ul7juawRRmBeRxIX0rdMYk=', 'x-amz-request-id': '0S84V7YSQ4GGBY7K', 'date': 'Fri, 12 Dec 2025 22:25:44 GMT', 'transfer-encoding': 'chunked', 'server': 'AmazonS3'}, 'RetryAttempts': 1}}",
+      "metadata": {
+        "rule_id": "S3-VERS-001"
+      }
+    },
+    {
+      "resource": "s3://test-public-acl-12345",
+      "issue": "Access Logging Disabled",
+      "severity": 5,
+      "details": "Bucket access logging is not enabled",
+      "metadata": {
+        "rule_id": "S3-LOG-001"
+      }
+    },
+    {
+      "resource": "s3://test-public-acl-12345",
+      "issue": "Versioning Not Enabled",
+      "severity": 5,
+      "details": "Versioning status: {'ResponseMetadata': {'RequestId': '6D0WJ5K7A48ZN54Q', 'HostId': '3xFunjfzUb8xSnVhm7HXYyATPG+TZ2dKO1uREamHOYcxUXChc6cDv/YC0ZC6sDw/UII+2qMpJUg=', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amz-id-2': '3xFunjfzUb8xSnVhm7HXYyATPG+TZ2dKO1uREamHOYcxUXChc6cDv/YC0ZC6sDw/UII+2qMpJUg=', 'x-amz-request-id': '6D0WJ5K7A48ZN54Q', 'date': 'Fri, 12 Dec 2025 22:25:51 GMT', 'transfer-encoding': 'chunked', 'server': 'AmazonS3'}, 'RetryAttempts': 1}}",
+      "metadata": {
+        "rule_id": "S3-VERS-001"
+      }
+    }
+  ],
+  "extra": {
+    "region": "eu-west-1"
+  }
+}
